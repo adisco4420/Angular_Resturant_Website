@@ -17,11 +17,12 @@ fxLayoutGap.xs="0">
         <md-card-content>
           <p>{{dish.description}}</p>
         </md-card-content>
-        <md-card-actions>
+        <md-card-actions>            
+                <button md-button (click)="goBack()">BACK</button>
           <button md-button>LIKE</button>
           <button md-button>SHARE</button>
-        </md-card-actions>
-      </md-card>
+      </md-card-actions>
+    </md-card>
 </div>
 
 <div fxFlex="40">
