@@ -19,13 +19,13 @@ fxLayoutGap.xs="0">
         </md-card-content>
         <md-card-actions>      
             <button md-button [routerLink]="['/dishdetail', prev]">
-              <span class="fa fa-chevron-left fa-lg"></span></button><br>      
-                <button md-button (click)="goBack()">BACK</button>
+              <span class="fa fa-chevron-left fa-lg"> Prev</span></button><br>      
+                <button md-button (click)="goBack()"> <span class="fa fa-chevron-left fa-md"></span>  BACK</button>
           <button md-button>LIKE</button>
           <button md-button>SHARE</button><br>
           <span class="flex-spacer"></span>
           <button md-button [routerLink]="['/dishdetail', next]">
-            <span class="fa fa-chevron-right fa-lg"></span></button>
+            <span class="fa fa-chevron-right fa-lg"> Next</span></button>
       </md-card-actions>
     </md-card>
 </div>
