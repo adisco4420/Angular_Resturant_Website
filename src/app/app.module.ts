@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms'; 
 
 import 'hammerjs';
 
@@ -36,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { LoginComponent } from './login/login.component';
     FlexLayoutModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ DishService ,
                PromotionService,
