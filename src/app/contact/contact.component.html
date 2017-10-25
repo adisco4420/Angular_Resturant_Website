@@ -43,7 +43,7 @@ fxLayoutGap="10px">
       <p>
         <md-input-container class="half-width" 
         dividerColor="{{formErrors.firstname ? 'warn' : 'primary'}}">         
-             <input mdInput formControlName="firstname" pattern="[A-Z][a-z]*" required placeholder="First Name" type="text">
+             <input mdInput formControlName="firstname" pattern="[A-Za-z]*" required placeholder="First Name" type="text">
         <md-hint color="warn">
           <span [hidden]="!(formErrors.firstname)">{{formErrors.firstname}}</span>
         </md-hint>
