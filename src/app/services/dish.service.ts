@@ -5,7 +5,6 @@ import { DISHES } from '../shared/dishes';
 
 import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/observable/of';
 
