@@ -3,10 +3,11 @@ import { Injectable } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DISHES } from '../shared/dishes';
 
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/observable/of';
+//import 'rxjs/add/operator/delay';
+//import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs/Rx'
 
 @Injectable()
 export class DishService {
