@@ -9,7 +9,7 @@
   <div *ngIf="dishes">
       <md-grid-list cols="2" rowHeight="200px">
           <md-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]" >
-              <img md-list-avatar src={{dish.image}} alt={{dish.name}} height="200px" />
+              <img md-list-avatar src="{{BaseURL + dish.image}}" alt={{dish.name}} height="200px" />
             <md-grid-tile-footer>
               <h1 md-line>{{dish.name  | uppercase}}</h1>
             </md-grid-tile-footer>
