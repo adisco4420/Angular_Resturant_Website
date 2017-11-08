@@ -6,7 +6,7 @@
       <hr>
     </div>
   </div>
-  <div *ngIf="dishes">
+  <div *ngIf="dishes" [@expand] >
       <md-grid-list cols="2" rowHeight="200px">
           <md-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]" appHighlight>
               <img md-list-avatar src="{{BaseURL + dish.image}}" alt={{dish.name}} height="200px" />
