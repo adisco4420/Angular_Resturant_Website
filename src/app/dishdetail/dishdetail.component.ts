@@ -5,6 +5,7 @@ import { DishService } from '../services/dish.service';
 
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { dishFeedback } from '../shared/feedback';
+import { Comment } from '../shared/comment';
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -20,33 +21,27 @@ export class DishdetailComponent implements OnInit {
  
   dish: Dish;
   dishIds:number[];
+  dishcopy = null;
   prev:number;
   next:number;
-  d:any;
-  n:any;
-  com:any;
-  value:any;
-  comments:any;
   errMess:string
 
-
-  array:any;
   feedbackForm:FormGroup;
-  feedback:dishFeedback;
+  comment:Comment;
   formErrors = {
-    'authorname':'',
-    'message':'',
-    'rating':'',
+    'author':'',
+    'comment':'',
+
   }
 
   validationMessages = {
-    'authorname':{
+    'author':{
       'required' :'authorname is required.',
       'minlength':'authorname must be at least 2 characers long',
       'maxlength':'authorname must not be more than 20 charcter long',
       'pattern':'authorname must contain only Alphabet',
     },
-    'message':{
+    'comment':{
       'required' :'comment is required.',
       'minlength':'comment must be at least 2 characers long',
     },
@@ -64,11 +59,11 @@ export class DishdetailComponent implements OnInit {
         }
 
         ngOnInit() {
-          
+          this.createForm();
               this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
               this.route.params
                 .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-                .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id),
+                .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id),
                   errmess => this.errMess = <any>errmess; });
             }
             setPrevNext(dishId: number) {
@@ -82,9 +77,9 @@ export class DishdetailComponent implements OnInit {
         }
         createForm(){
           this.feedbackForm = this.fb.group({
-            authorname:['', [Validators.required,Validators.pattern, Validators.minLength(2), Validators.maxLength(25)]],
-            message:['', [Validators.required,Validators.minLength(2),] ],
-            rating:[5]
+            author:['', [Validators.required,Validators.pattern, Validators.minLength(2), Validators.maxLength(25)]],
+            comment:['', [Validators.required,Validators.minLength(2),] ],
+            rating:5
           })
           this.feedbackForm.valueChanges
           .subscribe(data => this.onValueChanged(data));
@@ -125,22 +120,19 @@ onValueChanged(data?: any){
 }
 
 onSubmit(){
-this.feedback = this.feedbackForm.value;
-console.log(this.feedback);
+this.comment = this.feedbackForm.value;
+this.comment.date = new Date().toISOString()
+console.log(this.comment);
+
+this.dishcopy.comments.push(this.comment)
+this.dishcopy.save()
+  .subscribe(dish => this.dish = dish);
 this.feedbackForm.reset({
   authorname:'',
   message:'',
+  rating:5
 });
-this.array = [];
-this.array.push(this.feedback.message,);
-console.log(this.array);
-this.com= [];
-this.com.push('--  ' + this.feedback.authorname);
-this.value = [];
-this.value.push(this.feedback.rating + '  Star');
-this.d = new Date();
-this.n = this.d.toISOString();
-this.comments =[ {'message':'sodiq'}];
+
 }
 
 

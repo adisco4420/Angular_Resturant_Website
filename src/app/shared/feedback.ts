@@ -14,4 +14,5 @@ export class dishFeedback{
     authorname:string;
     message:string;
     rating:number;
+    date:string;
 }
