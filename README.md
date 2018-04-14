@@ -29,11 +29,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).# Screenshots
 
-<img src="conf/pix1.png" alt="HomePage" width="800" height="600">&nbsp;
-<img src="conf/pix2.png" alt="HomePage" width="800" height="400">&nbsp;
-<img src="conf/pix3.png" alt="HomePage" width="800" height="400">&nbsp;
-<img src="conf/pix4.png" alt="HomePage" width="800" height="400">&nbsp;
-<img src="conf/pix5.png" alt="HomePage" width="800" height="400">&nbsp;
+<img src="conf/pix1.png" alt="HomePage" width="800" height="800">&nbsp;
+<img src="conf/pix2.png" alt="HomePage" width="800" height="800">&nbsp;
+<img src="conf/pix3.png" alt="HomePage" width="800" height="800">&nbsp;
+<img src="conf/pix4.png" alt="HomePage" width="800" height="800">&nbsp;
+<img src="conf/pix5.png" alt="HomePage" width="800" height="800">&nbsp;
 
 
 # Author : Alabi Sodiq
